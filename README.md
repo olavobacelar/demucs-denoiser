@@ -14,8 +14,8 @@ The API accepts video files (with audio streams) or audio files as input, extrac
 1. Clone this repo
 2. Set the env variables (example under `.env.example`).
    - By default, this program splits the audio into chunks for processing. If you prefer to process the entire file at once, set the `SPLIT_AUDIO_BEFORE_DENOISING` environment variable to `false`. The duration of each chunk is controlled by the `AUDIO_CHUNK_DURATION_SECONDS` variable.
-   - You might want to set the `REDIS_HOST` env variable to `127.0.0.1` if you are running redis locally.
    - By default, audio is normalized after denoising. To skip normalization, set the `NORMALIZE_AUDIO` environment variable to `false`.
+   - You might want to set the `REDIS_HOST` env variable to `127.0.0.1` if you are running redis locally.
    - Set the AWS credentials and the API tokens as well.
    - Source the env variables with `source .env.example`.
 3. Start the redis queue with `redis-server`
