@@ -1,0 +1,13 @@
+**/*.mp3
+**/*.wav
+.venv/
+**/.DS_Store
+**/results/**
+**/uploads/**
+**/__pycache__/**
+**/*.log
+**/*.pid
+Dockerfile*
+README.md
+.env
+.envrc

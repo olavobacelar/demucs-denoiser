@@ -1,0 +1,42 @@
+[project]
+name = "demucs-denoiser"
+version = "0.1.0"
+description = "Denoise audio files with Demucs with interface via FastAPI and S3 storage"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "boto3>=1.35.64",
+    "celery[redis]>=5.4.0",
+    "demucs>=4.0.1",
+    "fastapi[standard]>=0.115.5",
+    "ffmpeg-normalize>=1.29.2",
+    "flower>=2.0.1",
+    "pydub>=0.25.1",
+    "requests>=2.32.3",
+    "soundfile>=0.12.1",
+    "supervisor>=4.2.5",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "pytest>=8.3.3",
+    "ruff>=0.8.0",
+]
+
+[tool.pyright]
+# this enables practically every flag given by pyright.
+# there are a couple of flags that are still disabled by
+# default in strict mode as they are experimental and niche.
+typeCheckingMode = "strict"
+pythonVersion = "3.12"
+
+exclude = [
+    ".venv",
+    "app/old-code.py"
+]
+
+reportImplicitOverride = true
+
+reportImportCycles = false
+reportPrivateUsage = false
